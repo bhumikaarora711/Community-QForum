@@ -1,0 +1,17 @@
+.full-width{
+    width: 100%;
+    text-align: center;
+}
+  .container{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+  }
+  .underline:hover{
+      text-decoration: underline;
+  }
+ footer{
+    position: static;
+ }
+ .icons{
+     margin-top: -10px;
+ }

@@ -1,0 +1,33 @@
+.navbar{
+    background-color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar-brand{
+    color: black !important;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 28px;
+    float: left;
+}
+
+a{
+    color: rgb(99, 96, 96) !important;
+}
+a:hover{
+    color: rgb(37, 36, 36) !important;
+}
+.nav-link:hover{
+    border-radius: 20px;
+    color: rgb(68, 68, 68) !important;
+    background-color: #FE8908;
+}
+.text-logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: -1px;
+    color:  black;
+    font-weight: bold;
+}
+.navbar{
+    box-shadow: 0 7px 13px 0 rgba(22, 22, 26, 0.18);
+}

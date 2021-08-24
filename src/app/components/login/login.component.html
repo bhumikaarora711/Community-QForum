@@ -1,0 +1,61 @@
+<div class="background">
+  <div class="container">
+    <div class="card bg-light">
+      <div class="row">
+        <section class="col-md-5">
+          <h4>Sign-In</h4>
+          <form (ngSubmit)="ngSubmit()">
+            <div class="text-danger"> {{msg}}</div>
+            <div class="mb-2">
+              <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" id="email" [(ngModel)]="userCredendials.username" name="email" required matInput />
+              </mat-form-field>
+            </div>
+            <div class="mb-2">
+              <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" id="password" name="password" [(ngModel)]="userCredendials.password" required
+                  matInput />
+              </mat-form-field>
+            </div>
+            <button type="submit" mat-raised-button color="primary" class="btn">Submit</button>&nbsp;
+            <button type="reset" mat-raised-button color="basic" class="btn" (click)="reload()">Reset</button>
+            <br><br>
+            Don’t have an account? <a [routerLink]="['/signup']"> Sign up</a>
+          </form>
+        </section>
+        <section class="col-md-2">
+          <hr class="vertical-line">
+        </section>
+        <section class="col-md-5">
+          <div class="side">
+            <h3 class="text-muted" style="text-align: center;">Or Connect using</h3>
+            <a
+              href="https://accounts.google.com/o/oauth2/auth/identifier?client_id=717762328687-iludtf96g1hinl76e4lc1b9a82g457nn.apps.googleusercontent.com&scope=profile%20email&redirect_uri=https%3A%2F%2Fstackauth.com%2Fauth%2Foauth2%2Fgoogle&state=%7B%22sid%22%3A1%2C%22st%22%3A%2259%3A3%3Abbc%2C16%3Ae9019b25b7e0be7d%2C10%3A1628342789%2C16%3A82be1ae910233786%2C845c0671119ddbc2b85ac958dc87a25f28677c275223c8d9fb970853f740b916%22%2C%22cdl%22%3Anull%2C%22cid%22%3A%22717762328687-iludtf96g1hinl76e4lc1b9a82g457nn.apps.googleusercontent.com%22%2C%22k%22%3A%22Google%22%2C%22ses%22%3A%22e89811960f9c43c4b0829388c8cc9785%22%7D&response_type=code&flowName=GeneralOAuthFlow">
+              <button type="button" class="btn"
+                style="width: 100%; height: 40px; border-radius: 5px; background-color: white; font-size: 14px; border:1px solid text-muted;">
+                <i class="fab fa-google" style="color: #DE4B39;"></i>&nbsp;&nbsp;Log in with Google
+              </button></a>
+            <br><br>
+            <a
+              href="https://github.com/login?client_id=01b478c0264a1fbd7183&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D01b478c0264a1fbd7183%26redirect_uri%3Dhttps%253A%252F%252Fstackauth.com%252Fauth%252Foauth2%252Fgithub%26response_type%3Dcode%26scope%3Duser%253Aemail%26state%3D%257B%2522sid%2522%253A1%252C%2522st%2522%253A%252259%253A3%253Abbc%252C16%253Af4fe51420f7b70db%252C10%253A1628343242%252C16%253A9df59cb087629591%252Cac3d705e3f120d14c24fa87902a2b3eee4cc4509899ae053c17c89ff73f2160b%2522%252C%2522cdl%2522%253Anull%252C%2522cid%2522%253A%252201b478c0264a1fbd7183%2522%252C%2522k%2522%253A%2522GitHub%2522%252C%2522ses%2522%253A%252258312c55c36c47629a49785ecb50f137%2522%257D">
+              <button type="submit" class="btn"
+                style="width: 100%; height: 40px; border-radius: 5px; background-color: black; color: white; font-size: 14px; border:1px solid text-muted;">
+                <i class="fab fa-github" style="color: white;"></i>&nbsp; &nbsp;Log in with GitHub
+              </button>
+            </a>
+            <br><br>
+            <a
+              href="https://www.facebook.com/login.php?skip_api_login=1&api_key=145044622175352&kid_directed_site=0&app_id=145044622175352&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.0%2Fdialog%2Foauth%3Fclient_id%3D145044622175352%26scope%3Demail%26redirect_uri%3Dhttps%253A%252F%252Fstackauth.com%252Fauth%252Foauth2%252Ffacebook%26state%3D%257B%2522sid%2522%253A1%252C%2522st%2522%253A%252259%253A3%253Abbc%252C16%253Aca61cd65ecc83d3d%252C10%253A1628343313%252C16%253Ad4a0befde67f89b6%252C7b3a0b121b560edb9fdf6e6dfd88a19d577c3853e46bc73753dbf6aef05f5b05%2522%252C%2522cdl%2522%253Anull%252C%2522cid%2522%253A%2522145044622175352%2522%252C%2522k%2522%253A%2522Facebook%2522%252C%2522ses%2522%253A%2522108903a72c214eef8213d51ba93fedf8%2522%257D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dfc716b9a-a47e-4e83-969a-78501c44344c%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstackauth.com%2Fauth%2Foauth2%2Ffacebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522sid%2522%253A1%252C%2522st%2522%253A%252259%253A3%253Abbc%252C16%253Aca61cd65ecc83d3d%252C10%253A1628343313%252C16%253Ad4a0befde67f89b6%252C7b3a0b121b560edb9fdf6e6dfd88a19d577c3853e46bc73753dbf6aef05f5b05%2522%252C%2522cdl%2522%253Anull%252C%2522cid%2522%253A%2522145044622175352%2522%252C%2522k%2522%253A%2522Facebook%2522%252C%2522ses%2522%253A%2522108903a72c214eef8213d51ba93fedf8%2522%257D%23_%3D_&display=page&locale=hi_IN&pl_dbl=0">
+              <button type="submit" class="btn"
+                style="width: 100%; height: 40px; border-radius: 5px; background-color: #3B5999; color: white; font-size: 14px; border:1px solid text-muted;">
+                <i class="fab fa-facebook-f" style="color: white;"></i>&nbsp;&nbsp;Log in with Facebook
+              </button>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

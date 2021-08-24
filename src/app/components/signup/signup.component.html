@@ -1,0 +1,43 @@
+<div class="background">
+  <div class="container">
+    <br>
+    <div class="card bg-light">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/stackoverflow-com-logo-png-transparent.png" height="100px"
+        width="90px" style="margin-left: 100px;"><b class="text-logo">Community</b><br><br>
+      <form>
+        <div class="text-danger">
+          {{msg}}
+        </div>
+        <div class="mb-3">
+          <mat-form-field style="width: 39.5%;">
+            <mat-label>FirstName</mat-label>
+            <input matInput type="text" id="name" name="firstname" [(ngModel)]="user.firstname" required />
+          </mat-form-field>&nbsp;
+          <mat-form-field style="width: 39.5%;">
+            <mat-label>LastName</mat-label>
+            <input matInput type="text" id="name" name="lastname" [(ngModel)]="user.lastname" required />
+          </mat-form-field>
+        </div>
+        <div class="mb-3">
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" id="email" name="email" [(ngModel)]="user.email" required />
+          </mat-form-field>
+        </div>
+        <div class="mb-3">
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" name="password" [(ngModel)]="user.password" required />
+          </mat-form-field>
+        </div>
+        <div class="mb-3 text-muted checkbox">
+          <input type="checkbox" required>&nbsp;I read and agree to <a style="color:#F48024">terms & conditions.</a> 
+        </div>
+        <button type="submit" class="btn1" mat-raised-button
+          (click)="signUp()" color="primary">Create Account</button>&nbsp;
+         <button type="reset" mat-raised-button color="basic" class="btn2">Reset</button> 
+        <br><br>
+      </form>
+    </div>
+  </div>
+</div>

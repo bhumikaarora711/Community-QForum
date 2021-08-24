@@ -1,0 +1,80 @@
+<div class="cont">
+    <br><br>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="h1">Ask a public question </div>
+            <div class="card">
+                <form>
+                    <div class="text-danger">
+                        {{msg}}
+                    </div>
+                    <div style="display: none;">
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" name="author" [(ngModel)]="question.author" value=params.id>
+                    </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title
+                            <div id="title" class="form-text">Be specific and imagine you’re asking a question to
+                                another
+                                person.</div>
+                        </label>
+                        <input type="text" name="title" [(ngModel)]="question.title" class="form-control" id="title"
+                            aria-describedby="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="body" class="form-label">Body
+                            <div id="body" class="form-text" id="tinymceTextarea">Include all the information someone
+                                would need to answer
+                                your
+                                question.</div>
+                        </label>
+                        <textarea class="form-control" id="floatingTextarea2" name="body" style="height: 100px"
+                            [(ngModel)]="question.body" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tags" class="form-label">Tags
+                            <div id="title" class="form-text">Add tags to describe what your question is about.</div>
+                        </label>
+                        <select class="form-select" [(ngModel)]="question.category" name="category">
+                            <option *ngFor="let cat of categories" [value]=cat.name name="category">
+                                {{cat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="category-post">
+                        Want to add other tag or category!!!<button id="catbtn" (click)="showCategory()">Click
+                            here.</button>
+                    </div>
+                    <div *ngIf="postCat==true">
+                        <div class="mb-3 mt-3">
+                            <label for="name" class="form-label">Tag-Name</label>
+                            <input type="text" [(ngModel)]="category.name" name="name" class="form-control" id="name"
+                                aria-describedby="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description
+                            </label>
+                            <textarea class="form-control" id="description" [(ngModel)]="category.description"
+                                name="description" style="height: 60px" required></textarea>
+                        </div>
+                        <button type="submit" mat-raised-button color="primary" (click)="postCategory()"
+                            class="btn">Add</button>&nbsp;
+                        <button type="reset" mat-raised-button color="basic" (click)="showCategory()"
+                            class="btn">Cancel</button>
+                    </div>
+                    <br>
+                    <div *ngIf="postCat==false">
+                        <button type="submit" mat-raised-button color="primary" (click)="postQue()"
+                            class="btn">Post</button>&nbsp;
+                        <button type="reset" mat-raised-button color="basic" class="btn" routerLink="/community"
+                            [queryParams]="{id: params.id}">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <img
+                src="https://rlv.zcache.com/never_stop_wondering_and_asking_questions_poster-rf4eed522e4864b119c9a0e6cdd8e387f_w2j_8byvr_512.jpg">
+        </div>
+    </div>
+</div>

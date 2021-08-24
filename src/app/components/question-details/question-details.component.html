@@ -1,0 +1,63 @@
+<div class="container">
+    <div *ngFor="let que of data">
+        <div *ngIf="que.question_id==params.que_id">
+            <br><br>
+            <div id="title">
+                {{que.title}}
+            </div>
+            <div class="date text-muted">
+              Asked  {{calculateDiff(que.date)}}&nbsp;days ago
+            </div>
+            <div class="author">
+                <img src="https://cdn0.iconfinder.com/data/icons/users-groups-1/512/user_edit-512.png" width="30px"
+                    height="30px">
+                {{que.author}}
+            </div>
+            <div class="category">
+                {{que.category}}
+            </div>
+            <hr>
+            <div class="body">
+                <p> {{que.body}}</p>
+            </div>
+            <img id="poster" src="https://th.bing.com/th/id/OIP.VDz4Y-LpB-JIHjClI3WCFAHaSh?pid=ImgDet&rs=1">
+            <div *ngFor="let ans of answer">
+                <div *ngIf="ans.question==que.question_id">
+                    <div class="card" id="answer">
+                        {{ans.content}}
+                        <div class="correct-ans" *ngIf="ans.correct_ans==true">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="auth">
+                            <img src="https://www.gravatar.com/avatar/2c69daea2c2d7f43f1ad717e15ac972c?s=328&d=identicon&r=PG"
+                                width="30" height="30">&nbsp;&nbsp;&nbsp;{{ans.author}}
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    </div>
+    <hr style="width: 80%;">
+
+    <div *ngFor="let que of data">
+        <div *ngIf="que.question_id==params.que_id">
+            <div id="ans-form">
+                Your Answer
+                <br><br>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="subject" name="subject" style="width: 85%;"
+                            [(ngModel)]="postans.subject" disabled placeholder=Re:{{que.title}} required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="content" name="content" style="height: 180px; width: 85%;"
+                            [(ngModel)]="postans.content" required></textarea>
+                    </div>
+                    <button class="btn" mat-raised-button color="primary" (click)="postAns()">Post
+                        Answer</button>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

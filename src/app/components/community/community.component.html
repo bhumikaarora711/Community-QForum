@@ -1,0 +1,151 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <!-- <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div> -->
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://images.pexels.com/photos/373883/pexels-photo-373883.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        class="d-block w-100" alt="..." height="533px">
+      <div class="carousel-caption d-none d-md-block" style="margin-bottom: 280px;">
+        <div  class="animated fadeIn" style="margin-right: 850px; margin-bottom: -179px;">
+          <img
+            src="https://th.bing.com/th/id/R.e7192be3d598c0d78b886416b5f283fd?rik=%2bjRbuY%2bm8lRGOQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_76872.png&ehk=OBe8%2bAnFfNTHx6fd1pn7wUDY%2f4hT%2bHVoWh2tHJpajUo%3d&risl=&pid=ImgRaw&r=0"
+            height="50px" width="50">
+          <h1 style="margin-top: -50px; margin-left: 55px;font-family: Arial, Helvetica, sans-serif;">Members <div
+              style="margin-left: 20px;">{{count}}</div>
+          </h1>
+        </div>
+        <div class="text-logo"> <img
+            src="https://cdn.freebiesupply.com/logos/large/2x/stackoverflow-com-logo-png-transparent.png" height="100px"
+            width="90px" style="margin-bottom: -18px;"></div>
+        <p class="cap"><br>Find Solutions. Ask Questions. Share Ideas.<br><br> Connect with Users across the world.</p>
+        <div class="animated fadeIn"  style="margin-left: 730px; margin-top: -73px;">
+          <img
+            src="https://th.bing.com/th/id/R.575d524f6797bd80359d8d7b92567ba2?rik=%2bNatviu098uUZg&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon-bw%2fask-a-question-icon-7.png&ehk=aUGa9WpcIUVDCDutmVAEe3PVqO8viPMMCIy4L5fAlsM%3d&risl=&pid=ImgRaw&r=0"
+            height="50px" width="50">
+          <h1 style="margin-top: -50px; margin-left: 115px;font-family: Arial, Helvetica, sans-serif;">Posts <div
+              style="margin-left: 10px;">{{quecount}}</div>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img
+        src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        class="d-block w-100" alt="..." height="533px">
+      <div class="carousel-caption d-none d-md-block">
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://images.pexels.com/photos/7968782/pexels-photo-7968782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        class="d-block w-100" alt="..." height="533px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="bg">
+  <div class="body">
+    <div class="row row1">
+      <section class="col-md-4">
+        <div id="heading">Top Questions</div>
+      </section>
+      <section class="col-md-4">
+        <form>
+          <div class="input-group">
+            <div class="form-outline" class="text-muted">
+              <input type="search" required id="title" class="form-control" style="width: 400px;" [(ngModel)]="title"
+                placeholder="Search by title, username, code, date & category!!!" name="title" />
+            </div>
+            <button mat-raised-button class="btnsearch" (click)="getSearchQue()">
+              <i class="fas fa-search"> Search</i>
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="col-md-4">
+        <button mat-raised-button color="primary" routerLink="/post-question" [queryParams]="{ id: params.id}"
+          class="btnpost">Ask Question</button>
+          <div class="row browse">
+            <div class="col-md-6"><br>
+                  <input type="text" [(ngModel)]="categoryData.name" name="name" class="form-control" id="name"
+                      aria-describedby="name" style="width: 300px" placeholder="name" required><br>
+                  <textarea class="form-control" id="description" [(ngModel)]="categoryData.description"
+                      name="description" style="height: 60px;width: 300px" placeholder="description" required></textarea><br>
+              <button type="submit" mat-raised-button  (click)="postCategory()"
+                 class="add-cat-btn">Add Category</button>
+          </div>
+          </div>
+      </section>
+      </div>
+    <div class="row main">
+      <div class="col-md-2">
+        <img class="side side-image"
+          src="https://comptiacdn.azureedge.net/webcontent/images/default-source/researchreports/2020-emerging-technology-top-10-list/top-10-emerging-technologies.png?sfvrsn=399c2bcc_2">
+          
+      </div>
+      <div class="col-md-12">
+        <div *ngIf="!Searched">
+          <div *ngFor="let que of questions;">
+            <hr>
+            <div class="card">
+              <div id="anscount" class="text-muted">answers
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ansCount(que.question_id)}}
+                <div >Pro-Code</div>
+                <div id="code">&nbsp;&nbsp;{{que.categoryCode}}</div>
+              </div>
+              <hr class="vertical-line">
+              <div class="content">
+                <a routerLink="/question-detail" [queryParams]="{ id: params.id, que_id: que.question_id}" class="link">
+                  <div class="card-title">{{que.title}}</div>
+                </a>
+                <div class="card-category">{{que.category}}</div>
+                <div class="text-muted"> Posted on {{que.instant.substring(0,16)}}</div>
+                <div class="text-muted author">{{que.author}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <br>
+        <div class="msg" *ngIf="c==1 && Searched==true"><br><br><br><br><br><br>{{msg}}</div>
+        <div *ngIf="Searched">
+          <div *ngFor="let que of searchque;">
+            <div class="card">
+              <div id="anscount" class="text-muted">
+                answers<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{anscount}}
+                <div >Pro-Code</div>
+                <div id="code">&nbsp;&nbsp;{{que.categoryCode}}</div>
+              </div>
+              <hr class="vertical-line">
+              <div class="content">
+                <a routerLink="/question-detail" [queryParams]="{ id: params.id, que_id: que.question_id}" class="link">
+                  <div class="card-title">{{que.title}}</div>
+                </a>
+                <div>
+                  <div class="card-category">{{que.category}}</div>
+                  <div class="text-muted"> Posted on {{que.instant.substring(0,16)}}</div>
+                  <div class="text-muted author">{{que.author}}</div>
+                </div>
+              </div>
+              <hr style="margin-left:-100px; width: 110%;"><br><br>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>

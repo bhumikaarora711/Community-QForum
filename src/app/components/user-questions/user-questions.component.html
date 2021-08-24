@@ -1,0 +1,59 @@
+<div class="bg">
+    <div class="container">
+        <br>
+        <div *ngFor="let que of questions">
+            <div *ngIf="que.author==params.author">
+                <div class="card">
+                    <div class="row">
+                        <div id="title" class="col-md-10">
+                            {{que.title}}
+                        </div>
+                        <div class="closed col-md-2" *ngIf="que.que_closed==true">
+                            <i class="">closed.</i>
+                        </div>
+                        <div class="nclosed col-md-2" *ngIf="que.que_closed!=true">
+                            <button (click)="closedQue(que.question_id)" mat-raised-button color="link">Closed
+                                question</button>
+                        </div>
+                    </div>
+                    <div id="category">
+                        {{que.category}}
+                    </div>
+                    <div id="body">
+                        {{que.body}}
+                    </div>
+                    <div *ngFor="let ans of answer">
+                        <div *ngIf="que.question_id==ans.question">
+                            <div id="content">
+                                <div class="row">
+                                    <section class="col-md-10">
+                                        <div>
+                                            {{ans.content}}
+                                        </div>
+                                    </section>
+                                    <section class="col-md-2">
+                                        <div class="correct-ans" *ngIf="ans.correct_ans==true">
+                                            <i class="fas fa-check fab1"></i>
+                                        </div>
+                                        <div class="mark-ans" *ngIf="ans.correct_ans==false">
+                                            Mark as correct <i class="fas fa-check fab2"
+                                                (click)="markAnsCorrect(ans.id)" type="button"></i>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="row">
+                                    <div class="text-muted">-{{ans.author}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="flag==0">
+    <h1 class="nopost">No Posts Yet!!!</h1>
+</div>

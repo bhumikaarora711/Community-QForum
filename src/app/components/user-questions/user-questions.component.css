@@ -1,0 +1,103 @@
+.bg{
+    height: 150%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#category{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6CBBF7; 
+    font-size: 16px;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 90px;
+    text-decoration: underline;
+}
+#title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #0194FD;
+    font-size: 23px;
+    line-height: 30px;
+    top: 40px;
+    padding: 18px 20px 10px 20px;
+    margin-left: 83px;
+}
+#content{
+    padding: 30px 20px 20px 20px;
+    background-color:#F5FBFF;
+    box-shadow: 0 8px 10px 0 rgba(22, 22, 26, 0.18);
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    margin-left: 90px;
+    margin-top: 5px;
+    width: 75%;
+}
+#content:hover{
+    transform: scale(1.06);
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 10px 0 rgba(22, 22, 26, 0.18);
+}
+.card{
+    background-color: transparent;
+    border:none;
+    margin-left: 40px;
+}
+#body{
+    margin-left: 90px;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+hr{
+    width: 80%;
+    margin-right: 15px;
+    margin-left: 75px;
+}
+.text-muted{
+    float: right;
+}
+.nopost{
+    font-size: 70px;
+    margin-left: 400px;
+    margin-bottom: 220px;
+    margin-top: -300px;
+}
+.closed{
+    font-size: 20px;
+    margin-left: 800px;
+    margin-bottom: -15px;
+    margin-top: -20px;
+}
+.row{
+    width: 100%;
+}
+.nclosed{
+    font-size: 30px;
+    margin-left: 750px;
+    margin-top: -40px;
+}
+
+.fab1{
+    color: green;
+    font-size: 20px;
+}
+.correct-ans{
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.mark-ans{
+    margin-left: -50px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.fab2{
+    color: black;
+    font-size: 20px;
+}
